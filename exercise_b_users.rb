@@ -55,12 +55,51 @@ users = {
 }
 
 # 1. Get Jonathan's Twitter handle (i.e. the string `"jonnyt"`)
+p users["Jonathan"][:twitter]
+
 # 2. Get Erik's hometown
+p users["Erik"][:home_town]
+
 # 3. Get the array of Erik's lottery numbers
+p users["Erik"][:lottery_numbers]
+
 # 4. Get the type of Avril's pet Monty
+p users["Avril"][:pets][0][:species]
+
 # 5. Get the smallest of Erik's lottery numbers
+p users["Erik"][:lottery_numbers].min()
+
 # 6. Return an array of Avril's lottery numbers that are even
+
+def find_evens(hash, name)
+  result = []
+  for number in hash[name][:lottery_numbers]
+    result.push(number) if number % 2 == 0
+  end
+  return result
+end
+
+p find_evens(users, "Avril")
+
+
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
+users["Erik"][:lottery_numbers].push(7)
+
 # 8. Change Erik's hometown to Edinburgh
+users["Erik"][:home_town] = "Edinburgh"
+
 # 9. Add a pet dog to Erik called "Fluffy"
+users["Erik"][:pets].push( {name: "Fluffy", species: "dog"} )
+
 # 10. Add another person to the users hash
+users["Hugo"] = {
+  :twitter => "hurley_hawaii",
+  :lottery_numbers => [4, 8, 15, 16, 23, 42],
+  :home_town => "Los Angeles",
+  :pets => [
+    {
+      :name => "fido",
+      :species => "dog"
+    }
+  ]
+}
