@@ -22,14 +22,19 @@ stops.delete_at(2)
 stops.length()
 
 # 8. How many ways can we return `"Falkirk High"` from the array?
-# Commented out as they mutate the string
-# method_1 = stops[2]
-# method_2 = stops[stops.index("Falkirk High")]
-# method_3 = stops[-5]
-# method_4 = stops.values_at(2)
-# method_5 = stops.fetch(2)
-# method_6 = stops.slice!(2)
-# method_7 = stops.keep_if { |stop|  stop == "Falkirk High" }[0]
+method_1 = stops[2]
+method_2 = stops[-5]
+method_3 = stops.values_at(2)[0]
+method_4 = stops.values_at(-5)[0]
+method_5 = stops.fetch(2)
+method_6 = stops.fetch(-5)
+method_7 = stops.slice(2)
+method_8 = stops.slice(-5)
+method_9 = stops[stops.index("Falkirk High")]
+
+# Commented out as the two below mutate the array
+# method_10 = stops.keep_if { |stop| stop == "Falkirk High" }[0]
+# method_11 = stops.select! { |stop| stop == "Falkirk High" }[0]
 
 # 9. Reverse the positions of the stops in the array
 reversed_stops = stops.reverse()
