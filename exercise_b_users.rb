@@ -70,17 +70,15 @@ p users["Avril"][:pets][0][:species]
 p users["Erik"][:lottery_numbers].min()
 
 # 6. Return an array of Avril's lottery numbers that are even
-
 def find_evens(hash, name)
   result = []
   for number in hash[name][:lottery_numbers]
-    result.push(number) if number % 2 == 0
+    result.push(number) if number.even?
   end
   return result
 end
 
 p find_evens(users, "Avril")
-
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 users["Erik"][:lottery_numbers].push(7)
